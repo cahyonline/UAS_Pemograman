@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Ground
   - Coin
+  - Kont
+  - Kacang
+  - Sayur
+  - Minyak
+  - Nasi
   layers:
   - Default
   - TransparentFX

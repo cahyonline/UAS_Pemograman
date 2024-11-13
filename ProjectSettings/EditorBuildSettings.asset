@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Congrats.unity
     guid: 492a2cfd081aee54ba6abfcc243e1698
+  - enabled: 1
+    path: Assets/Scenes/nyobain.unity
+    guid: 89ecb90d942e1154dbf37bd060f1b293
   m_configObjects: {}

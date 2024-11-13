@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     public float cooldown = 0.5f; // jeda waktu untuk menembak
     bool isCanShoot = true; // memastikan untuk kapan dapat menembak
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -126,7 +125,7 @@ public class PlayerController : MonoBehaviour
         if (!isJump)
         {
             // Kondisi ketika Loncat 
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 300f);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 700f);
         }
     }
 
@@ -137,6 +136,43 @@ public class PlayerController : MonoBehaviour
             Data.score += 1;
             Destroy(collision.gameObject);
         }
+        if (collision.CompareTag("Kacang"))
+        {
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                Inventory.Instance.AddItem(item.itemType, item.amount);
+                Destroy(collision.gameObject);
+            }
+        }
+        if (collision.CompareTag("Nasi"))
+        {
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                Inventory.Instance.AddItem(item.itemType, item.amount);
+                Destroy(collision.gameObject);
+            }
+        }        
+        if (collision.CompareTag("Minyak"))
+        {
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                Inventory.Instance.AddItem(item.itemType, item.amount);
+                Destroy(collision.gameObject);
+            }
+        }    
+        if (collision.CompareTag("Sayur"))
+        {
+            // Asumsikan item di-attach ke Collider sebagai komponen
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                Inventory.Instance.AddItem(item.itemType, item.amount);
+                Destroy(collision.gameObject);
+            }
+        }        
     }
 
     public void Idle()
